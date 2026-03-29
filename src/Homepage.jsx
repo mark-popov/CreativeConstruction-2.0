@@ -9,7 +9,7 @@ function Homepage() {
   const handleManagementClick = (e) => {
     e.preventDefault();
 
-    const password = propt("Enter management password:");
+    const password = prompt("Enter management password:");
 
     if (password === "manage123") {}
   }
