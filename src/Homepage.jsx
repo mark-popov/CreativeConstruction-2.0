@@ -1,8 +1,10 @@
 import "./Homepage.css";
 import logo from "./assets/images/logo.svg";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Homepage() {
+  const navigate = useNavigate();
 
   const [error, setError] = useState("");
 
@@ -11,7 +13,13 @@ function Homepage() {
 
     const password = prompt("Enter management password:");
 
-    if (password === "manage123") {}
+    console.log("env password:", import.meta.env);
+
+    if (password === import.meta.env.VITE_ADMIN_PASSWORD) {
+      navigate("/management");
+    } else if (password !== null) {
+      setError("Invalid password");
+    }
   }
 
   return (
