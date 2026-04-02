@@ -3,3 +3,98 @@
     max-width: 100%;
     height: auto;
 }
+
+.management-dashboard-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0 20px;
+    margin-top: 20px;
+}
+.management-dashboard-header h1 {
+    color: #025395;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 50px 0 10px;
+}
+.choose-view {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+    margin: 25px auto;
+}
+
+.choose-view button {
+    display: inline-block;
+    width: 270px;
+    padding: 14px 20px;
+    text-decoration: none;
+    border: 1px solid #cfe0ea;
+    border-radius: 12px;
+    color: #025395;
+    background-color: #ffffff;
+    text-align: center;
+}
+.choose-view button:hover {
+    background-color: #f0f4f8;
+    border-color: #98b7d7;
+    color: #025395;
+}
+.choose-view button.active {
+    background-color: #025395;
+    border-color: #025395;
+    color: #ffffff;
+}
+.filter-boxes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    margin: 25px auto;
+}
+.site-name {
+    width: 270px;
+    padding: 14px 20px;
+    text-decoration: none;
+    border: 1px solid #cfe0ea;
+    border-radius: 12px;
+    color: #025395;
+    background-color: #ffffff;
+    text-align: center;
+}
+.site-name select {
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.company-name {
+    width: 225px;
+    padding: 14px 20px;
+    text-decoration: none;
+    border: 1px solid #cfe0ea;
+    border-radius: 12px;
+    color: #025395;
+    background-color: #ffffff;
+    text-align: center;
+}
+.company-name select {
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.search-box {
+    width: 270px;
+    padding: 12px 20px;
+    text-decoration: none;
+    border: 1px solid #cfe0ea;
+    border-radius: 12px;
+    color: #025395;
+    background-color: #ffffff;
+    text-align: center;
+}
+.search-box input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #cfe0ea;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

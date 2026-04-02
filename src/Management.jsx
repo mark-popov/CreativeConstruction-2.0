@@ -1,11 +1,13 @@
 import "./Management.css";
 import logo from "./assets/images/logo.svg";
-
+import { useState } from "react";
 
 
 function Management() {
 
-    const handleSiteChange = (e) => {
+const [selectedSite, setSelectedSite] = useState("sign-in-out");
+
+const handleSiteChange = (e) => {
   console.log(e.target.value);
 };
 
@@ -22,14 +24,37 @@ const handleSearchChange = (e) => {
         <div className="management-dashboard-header">
           <img src={logo} alt="Creative Construction Logo" />
           <h1>Management Dashboard</h1>
-          <p>Recent submissions</p>
-        </div>
-        <div className="choose-view">
-            <button>View Sign In/Out</button>
-            <button>View Induction</button>
-            <button>View RAMS</button>
         </div>
 
+      {/* CHOOSE VIEW DROPDOWN - FILTER */}
+        <div className="choose-view">
+            <button
+              className={selectedSite === "sign-in-out" ? "active" : ""}
+              onClick={() => setSelectedSite("sign-in-out")}
+            >
+              View Sign In/Out
+            </button>
+
+            <button
+              className={selectedSite === "inductions" ? "active" : ""}
+              onClick={() => setSelectedSite("inductions")}
+            >
+              View Inductions
+            </button>
+
+            <button
+              className={selectedSite === "rams" ? "active" : ""}
+              onClick={() => setSelectedSite("rams")}
+            >
+              View RAMS
+            </button>
+        </div>
+
+
+      
+      
+      <div className="filter-boxes">
+      {/* SITE NAME DROPDOWN - FILTER*/}
         <div className="site-name">
             <label htmlFor="site-name">Select a site:</label>
             <select name="site-name" id="site-name" onChange={handleSiteChange}>
@@ -43,6 +68,7 @@ const handleSearchChange = (e) => {
             </select>
         </div>
 
+      {/* COMPANY NAME DROPDOWN - FILTER */}
         <div className="company-name">
             <label htmlFor="company-name">Select a company:</label>
             <select name="company-name" id="company-name" onChange={handleCompanyChange}>
@@ -56,10 +82,19 @@ const handleSearchChange = (e) => {
             </select>
         </div>
 
+      {/* SEARCH BOX - FILTER */}
         <div className="search-box">
             <label htmlFor="search-box">Search by name:</label>
             <input type="text" id="search-box" placeholder="Enter name..." onChange={handleSearchChange}/>
         </div>
+      </div>
+
+      {/* TABLE OF SIGN IN/OUT, INDUCTIONS, RAMS */}
+        <div className="data-table">
+          
+          </div>
+
+
     </>
   );
 }
