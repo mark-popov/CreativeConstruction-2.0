@@ -1,11 +1,14 @@
 import "./Management.css";
 import logo from "./assets/images/logo.svg";
 import { useState } from "react";
+import SignInOutTable from './SignInOutTable'; 
+import InductionTable from './InductionTable';
+import { Link } from "react-router-dom";
 
 
 function Management() {
 
-const [selectedSite, setSelectedSite] = useState("sign-in-out");
+const [selectedView, setSelectedView] = useState("sign-in-out");
 
 const handleSiteChange = (e) => {
   console.log(e.target.value);
@@ -22,29 +25,31 @@ const handleSearchChange = (e) => {
   return (
     <>
         <div className="management-dashboard-header">
+          <Link to="/">
           <img src={logo} alt="Creative Construction Logo" />
+          </Link>
           <h1>Management Dashboard</h1>
         </div>
 
       {/* CHOOSE VIEW DROPDOWN - FILTER */}
         <div className="choose-view">
             <button
-              className={selectedSite === "sign-in-out" ? "active" : ""}
-              onClick={() => setSelectedSite("sign-in-out")}
+              className={selectedView === "sign-in-out" ? "active" : ""}
+              onClick={() => setSelectedView("sign-in-out")}
             >
-              View Sign In/Out
+              View Sign In / Out
             </button>
 
             <button
-              className={selectedSite === "inductions" ? "active" : ""}
-              onClick={() => setSelectedSite("inductions")}
-            >
+              className={selectedView === "inductions" ? "active" : ""}
+                onClick={() => setSelectedView("inductions")}
+                >
               View Inductions
             </button>
 
             <button
-              className={selectedSite === "rams" ? "active" : ""}
-              onClick={() => setSelectedSite("rams")}
+              className={selectedView === "rams" ? "active" : ""}
+              onClick={() => setSelectedView("rams")}
             >
               View RAMS
             </button>
@@ -89,11 +94,11 @@ const handleSearchChange = (e) => {
         </div>
       </div>
 
-      {/* TABLE OF SIGN IN/OUT, INDUCTIONS, RAMS */}
-        <div className="data-table">
-          
-          </div>
 
+          <div className="data-table">
+  {selectedView === "sign-in-out" && <SignInOutTable />}
+  {selectedView === "inductions" && <InductionTable />}
+</div>
 
     </>
   );

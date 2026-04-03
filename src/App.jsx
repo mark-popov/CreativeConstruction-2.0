@@ -3,7 +3,6 @@ import Home from './Homepage';
 import Management from './Management';
 import Homepage from './Homepage';
 
-
 function App() {
   return (
     <Router>

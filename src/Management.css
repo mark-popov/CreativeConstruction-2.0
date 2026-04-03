@@ -40,6 +40,7 @@
     background-color: #f0f4f8;
     border-color: #98b7d7;
     color: #025395;
+    cursor: pointer;
 }
 .choose-view button.active {
     background-color: #025395;
@@ -63,9 +64,17 @@
     background-color: #ffffff;
     text-align: center;
 }
+
 .site-name select {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.site-name select:hover {
+    background-color: #f0f4f8;
+    border-color: #98b7d7;
+    color: #025395;
+    cursor: pointer;
 }
 .company-name {
     width: 225px;
@@ -80,6 +89,13 @@
 .company-name select {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.company-name select:hover {
+    background-color: #f0f4f8;
+    border-color: #98b7d7;
+    color: #025395;
+    cursor: pointer;
 }
 .search-box {
     width: 270px;
@@ -97,4 +113,16 @@
     border-radius: 5px;
     border: 1px solid #cfe0ea;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .table-container {
+    max-height: 250px;
+  }
+
+  .custom-table th,
+  .custom-table td {
+    padding: 10px;
+    font-size: 12px;
+  }
 }
