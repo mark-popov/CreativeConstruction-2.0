@@ -13,6 +13,7 @@ function Induction() {
   };
 
   return (
+    <>
     <div className="induction-page">
     <div className="header">
       <Link to="/">
@@ -133,6 +134,7 @@ function Induction() {
       </div>
 
         </div>
+    </>
     
 
 

@@ -24,6 +24,7 @@ function Homepage() {
   }
 
   return (
+    <>
     <div className="homepage">
       <div className="header">
         <img src={logo} alt="Creative Construction Logo" />
@@ -41,10 +42,12 @@ function Homepage() {
       </p>
 
       <div className="nav">
-        <a href="#">Sign In / Out</a>
+        <Link to="/signinout">Sign In / Out</Link>
         <Link to="/induction">Induction</Link>
         <a href="#">RAMS</a>
-        <a href="#" onClick={handleManagementClick}>Management Dashboard</a>
+        <button href="#" onClick={handleManagementClick}>
+          Management Dashboard
+        </button>
       </div>
 
       <p>{error}</p>
@@ -53,6 +56,7 @@ function Homepage() {
         <p>© 2026 Creative Construction. All rights reserved.</p>
       </div>
     </div>
+    </>
   );
 }
 

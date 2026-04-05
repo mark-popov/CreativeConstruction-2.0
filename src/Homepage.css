@@ -94,6 +94,27 @@ body::before {
   gap: 16px;
   margin: 25px auto;
 }
+.nav button {
+  font: inherit;
+  display: inline-block;
+  width: 270px;
+  padding: 14px 20px;
+  text-decoration: none;
+  border: 1px solid #cfe0ea;
+  border-radius: 12px;
+  color: #025395;
+  background-color: #ffffff;
+  text-align: center;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(2, 83, 149, 0.08);
+  cursor: pointer;
+}
+.nav button:hover {
+  background-color: #cde2ee;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(2, 83, 149, 0.12);
+}
 
 .nav a {
   display: inline-block;
