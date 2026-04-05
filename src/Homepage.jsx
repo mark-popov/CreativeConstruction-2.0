@@ -2,6 +2,7 @@ import "./Homepage.css";
 import logo from "./assets/images/logo.svg";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Homepage() {
   const navigate = useNavigate();
@@ -41,7 +42,7 @@ function Homepage() {
 
       <div className="nav">
         <a href="#">Sign In / Out</a>
-        <a href="#">Induction</a>
+        <Link to="/induction">Induction</Link>
         <a href="#">RAMS</a>
         <a href="#" onClick={handleManagementClick}>Management Dashboard</a>
       </div>
