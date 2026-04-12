@@ -8,11 +8,19 @@ import { useState, useEffect } from 'react';
 function App() {
 
 const [inductions, setInductions] = useState([]);
+const [signInOuts, setSignInOuts] = useState([]);
 
 useEffect(() => {
   const saved = localStorage.getItem("inductions");
   if (saved) {
     setInductions(JSON.parse(saved));
+  }
+}, []);
+
+useEffect(() => {
+  const saved = localStorage.getItem("signInOuts");
+  if (saved) {
+    setSignInOuts(JSON.parse(saved));
   }
 }, []);
 
@@ -23,14 +31,19 @@ useEffect(() => {
 
 
           <Route path="/management" element={
-            <Management inductions={inductions} />} />
+            <Management inductions={inductions} signInOuts={signInOuts} />} />
 
 
           <Route path="/induction" element={
-            <Induction setInductions={setInductions} />} />
+            <Induction setInductions={setInductions}/>} />
 
 
-          <Route path="/signinout" element={<SignInOut />} />
+          <Route path="/signinout" element={
+            <SignInOut
+               setSignInOuts={setSignInOuts}
+               signInOuts={signInOuts}
+               />}
+              />
         </Routes>
     </Router>
   );

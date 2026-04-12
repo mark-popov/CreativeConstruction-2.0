@@ -30,7 +30,7 @@ function Induction({setInductions}) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setInductions(prev => {
-      const updated = [...prev, formData];
+      const updated = [formData, ...prev];
       localStorage.setItem("inductions", JSON.stringify(updated));
       return updated;
     });

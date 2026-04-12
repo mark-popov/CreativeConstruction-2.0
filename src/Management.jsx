@@ -6,7 +6,7 @@ import InductionTable from './InductionTable';
 import { Link } from "react-router-dom";
 
 
-function Management({inductions}) {
+function Management({inductions, signInOuts}) {
 
 const [selectedView, setSelectedView] = useState("sign-in-out");
 
@@ -96,7 +96,7 @@ const handleSearchChange = (e) => {
 
 
           <div className="data-table">
-  {selectedView === "sign-in-out" && <SignInOutTable />}
+  {selectedView === "sign-in-out" && <SignInOutTable data={signInOuts} />}
   {selectedView === "inductions" && <InductionTable data={inductions} />}
 </div>
 
