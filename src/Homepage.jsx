@@ -44,7 +44,7 @@ function Homepage() {
       <div className="nav">
         <Link to="/signinout">Sign In / Out</Link>
         <Link to="/induction">Induction</Link>
-        <a href="#">RAMS</a>
+        <Link to="/rams">RAMS</Link>
         <button href="#" onClick={handleManagementClick}>
           Management Dashboard
         </button>

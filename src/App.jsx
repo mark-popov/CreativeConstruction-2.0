@@ -3,12 +3,15 @@ import Management from './Management';
 import Homepage from './Homepage';
 import Induction from './Induction';
 import SignInOut from './SignInOut';
+import Rams from './Rams';
 import { useState, useEffect } from 'react';
+import { supabase } from './supabaseClient';
 
 function App() {
 
 const [inductions, setInductions] = useState([]);
 const [signInOuts, setSignInOuts] = useState([]);
+const [rams, setRams] = useState([]);
 
 useEffect(() => {
   const saved = localStorage.getItem("inductions");
@@ -24,6 +27,14 @@ useEffect(() => {
   }
 }, []);
 
+useEffect(() => {
+  const saved = localStorage.getItem("rams");
+  if (saved) {
+    setRams(JSON.parse(saved));
+  }
+}, []);
+
+
   return (
     <Router>
         <Routes>
@@ -31,11 +42,13 @@ useEffect(() => {
 
 
           <Route path="/management" element={
-            <Management inductions={inductions} signInOuts={signInOuts} />} />
+            <Management inductions={inductions} signInOuts={signInOuts} rams={rams}
+            />} />
 
 
           <Route path="/induction" element={
-            <Induction setInductions={setInductions}/>} />
+            <Induction setInductions={setInductions}
+            />} />
 
 
           <Route path="/signinout" element={
@@ -43,7 +56,11 @@ useEffect(() => {
                setSignInOuts={setSignInOuts}
                signInOuts={signInOuts}
                />}
-              />
+          />
+
+          <Route path="/rams" element={
+            <Rams rams={rams} setRams={setRams}/>}         
+          />
         </Routes>
     </Router>
   );

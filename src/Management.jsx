@@ -3,10 +3,11 @@ import logo from "./assets/images/logo.svg";
 import { useState } from "react";
 import SignInOutTable from './SignInOutTable'; 
 import InductionTable from './InductionTable';
+import RamsTable from './RamsTable';
 import { Link } from "react-router-dom";
 
 
-function Management({inductions, signInOuts}) {
+function Management({inductions, signInOuts, rams}) {
 
 const [selectedView, setSelectedView] = useState("sign-in-out");
 
@@ -98,6 +99,7 @@ const handleSearchChange = (e) => {
           <div className="data-table">
   {selectedView === "sign-in-out" && <SignInOutTable data={signInOuts} />}
   {selectedView === "inductions" && <InductionTable data={inductions} />}
+  {selectedView === "rams" && <RamsTable data={rams} />}
 </div>
 
     </>

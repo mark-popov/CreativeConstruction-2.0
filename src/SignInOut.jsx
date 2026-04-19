@@ -11,8 +11,8 @@ function SignInOut({ setSignInOuts, signInOuts }) {
     const [submitted, setSubmitted] = useState(false);
 
     const now = new Date().toLocaleTimeString("en-GB", {
-  hour: "2-digit",
-  minute: "2-digit",
+            hour: "2-digit",
+            minute: "2-digit",
 });
 
     const today = new Date().toISOString().split("T")[0];

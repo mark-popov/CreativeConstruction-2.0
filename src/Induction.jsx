@@ -119,19 +119,19 @@ setTimeout(() => {
     <div className="form-row">
         <div>
             <label htmlFor="forename">Forename:</label>
-            <input type="text" name="forename" id="forename" placeholder="John" value={formData.forename} onChange={(e) => setFormData({...formData, forename: e.target.value})} required/>
+            <input type="text" name="forename" id="forename" placeholder="Forename" value={formData.forename} onChange={(e) => setFormData({...formData, forename: e.target.value})} required/>
         </div>
         <div>
             <label htmlFor="surname">Surname:</label>
-            <input type="text" name="surname" id="surname" placeholder="Smith" value={formData.surname} onChange={(e) => setFormData({...formData, surname: e.target.value})} required/>
+            <input type="text" name="surname" id="surname" placeholder="Surname" value={formData.surname} onChange={(e) => setFormData({...formData, surname: e.target.value})} required/>
         </div>
         <div>
             <label htmlFor="trade">Trade:</label>
-            <input type="text" name="trade" id="trade" placeholder="Carpenter" value={formData.trade} onChange={(e) => setFormData({...formData, trade: e.target.value})} required/>
+            <input type="text" name="trade" id="trade" placeholder="Trade" value={formData.trade} onChange={(e) => setFormData({...formData, trade: e.target.value})} required/>
         </div>
         <div>
             <label htmlFor="cscs-number">CSCS Card Number:</label>
-            <input type="text" id="cscs-number" name="cscs-number" placeholder="1234567890" value={formData.cscsNumber} onChange={(e) => setFormData({...formData, cscsNumber: e.target.value})} required/>
+            <input type="text" id="cscs-number" name="cscs-number" placeholder="CSCS Card Number" value={formData.cscsNumber} onChange={(e) => setFormData({...formData, cscsNumber: e.target.value})} required/>
         </div>
         <div>
             <label htmlFor="cscs-expiry">CSCS Expiry Date:</label>
